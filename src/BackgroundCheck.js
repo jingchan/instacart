@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../assets/instacart-logo-color.png';
 import './Home.css';
 
-class Confirm extends React.Component {
+class BackgroundCheck extends React.Component {
 	onSubmit = () => {
 		console.log('submitted');
 	}
@@ -15,14 +15,11 @@ class Confirm extends React.Component {
         </div>
 
         <div className='Home-main'>
-					Do you agree to a background check?
-
-					<button>Decline</button>
-					<button>I Agree</button>
+            Do you agree to a background check?
         </div>
       </div>
     );
   }
 }
 
-export default Confirm;
+export default BackgroundCheck;
