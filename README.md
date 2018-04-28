@@ -24,7 +24,11 @@ Then the page should be visible at http://localhost:3000/
 
 6. In the interest of time, we pass 'session' data through get parameters rather than a more conventional production approach such as creation of a session.
 
+7. In a production environment, we also would not commit the database to version control.  Even if it were not hosted remotely, this causes the VCS to become bloated.
+
 # Part 2: Applicant Analysis
+
+Place the db at 'db/applicants.sqlite3'
 
 ```
 npm i  # Ensure dependencies are installed
