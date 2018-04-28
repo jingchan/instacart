@@ -16,3 +16,4 @@ Then the page should be visible at http://localhost:3000/
 
 2. We add assets directly to the git repository due to the limited time of this challenge.  In a production setting we would avoid adding large binary data to the repo to prevent bloat.
 
+3. Note: Had random bad disk reads/permissions while working on original (Windows) computer, had to switch over to another computer (Mac) which took some time.
