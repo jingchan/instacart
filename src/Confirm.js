@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from '../assets/instacart-logo-color.png';
+import Header from './Header';
 import './Home.css';
 
 class Confirm extends React.Component {
-	onSubmit = () => {
-		console.log('submitted');
+	handleReturn = event => {
+    window.location.href = '/';
 	}
 
   render() {
     return (
       <div className="Home">
-        <div className="Home-header">
-          <a href='//instacart.com'><img src={logo} className="Home-logo" alt="logo" /></a>
-        </div>
-
+        <Header />
         <div className='Home-main'>
-					Do you agree to a background check?
-
-					<button>Decline</button>
-					<button>I Agree</button>
+          <h2 className='Home-title'>Confirmation</h2>
+          <div className='Home-text'>Thank you for applying to become a shopper!  We will get back to you soon!</div>
+          <div className='Home-buttons'>
+              <button className='Home-button Home-ok' onClick={this.handleReturn}>Finish</button>
+            </div>
         </div>
       </div>
+
     );
   }
 }

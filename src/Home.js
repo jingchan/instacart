@@ -1,18 +1,38 @@
 import React from 'react';
-import logo from '../assets/instacart-logo-color.png';
+import Header from './Header';
 import './Home.css';
 
 class Home extends React.Component {
   render() {
     return (
       <div className="Home">
-        <div className="Home-header">
-          <a href='//instacart.com'><img src={logo} className="Home-logo" alt="logo" /></a>
-        </div>
+        <Header />
 
         <div className='Home-main'>
-          <h2>Shopper Application</h2>
-          <p className='Home-Intro'>Get paid to shop!</p>
+          <h2 className='Home-title'>Shopper Application</h2>
+          <p className='Home-text'>Get paid to shop!</p>
+          <ul className='Home-list'>
+            <li className='Home-item'>
+              <span className='Home-item-text'>
+              Earn extra money in your spare time
+              </span>
+            </li>
+            <li className='Home-item'>
+              <span className='Home-item-text'>
+              Flexible hours that work for you
+              </span>
+            </li>
+            <li className='Home-item'>
+              <span className='Home-item-text'>
+              Car is not required
+              </span>
+            </li>
+            <li className='Home-item'>
+              <span className='Home-item-text'>
+              Join a great community
+              </span>
+            </li>
+          </ul>
 
           <a className='Home-CTA' href='/apply'>Apply Now!</a>
         </div>

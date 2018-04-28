@@ -1,11 +1,8 @@
 .Home {
-  position: absolute;
   text-align: center;
   background-color: red;
-  height: 100%;
+  height: 100vh;
   width: 100%;
-  bottom: 0;
-  right: 0;
   background-image: url('../assets/background1.jpg');
   background-size: cover;
   background-position: center;
@@ -36,23 +33,91 @@
   padding: 1rem;
 }
 
+.Home-title {
+  font-size: 28px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  margin-top: 14px;
+}
+
+.Home-text {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+}
 
 .Home-CTA {
-  background-color: rgba(112, 250, 77, 1.0);
+  background-color: #43b02a;
+  color: rgb(255, 255, 255);
+
+  /* background-color: rgba(112, 250, 77, 1.0); */
   padding: 15px 30px;
   border-radius: 7px;
   text-decoration: none;
   box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
 }
+
 .Home-CTA:visited {
-  color: initial;
+  color: none;
 }
 
 .Home-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 50px auto;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 15px 30px;
-  width: 600px;
-  height: 50%;
+  max-width: 600px;
+  min-height: 50%;
   text-decoration: none;
 }
+
+.Home-list {
+  /* text-align: left; */
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.Home-item {
+  padding-top: 14px; 
+}
+.Home-item-text {
+  padding-left: 16px;
+}
+
+/* Global Button Formatting */
+
+.Home-buttons {
+  display: flex;
+  margin: 50px 0;
+  padding: 0;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Home-button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  font-size: 16px;
+  padding: 15px 30px;
+  border-radius: 4px;
+  width: 138px;
+  margin: 0;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+  background-color: #eee;
+  color: #333333;
+}
+
+.Home-ok {
+  background-color: #43b02a;
+  color: #fff;
+  width: 200px;
+}
+

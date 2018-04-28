@@ -17,3 +17,7 @@ Then the page should be visible at http://localhost:3000/
 2. We add assets directly to the git repository due to the limited time of this challenge.  In a production setting we would avoid adding large binary data to the repo to prevent bloat.
 
 3. Note: Had random bad disk reads/permissions while working on original (Windows) computer, had to switch over to another computer (Mac) which took some time.
+
+4. Using color #43b02a for CTA to match the color palette of logo
+
+5. Added rest of application form as well as console output.  Some tradeoffs were made for styling to ensure that pressing 'enter' on the information form would result in a 'submit' rather than a 'back'.

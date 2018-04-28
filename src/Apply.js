@@ -1,6 +1,7 @@
 import React from 'react';
-import logo from '../assets/instacart-logo-color.png';
+import Header from './Header';
 import './Home.css';
+import './Apply.css';
 
 class Apply extends React.Component {
 	constructor(props) {
@@ -8,13 +9,39 @@ class Apply extends React.Component {
 
 		this.state = {
 		};
+
+		this.form = React.createRef();
+
 	}
-	
+	handleCancel = event => {
+		window.history.back();
+	}
+
+	// handleKeyDown = event => {
+	// 	// this.handleSubmit();
+	// 	if(event.keyCode === 13){
+	// 		event.preventDefault();
+	// 		if(this.form && this.form.current){
+	// 			this.form.current.submit();
+	// 		}
+	// 	}
+	// }
+
 	handleSubmit = event => {
 		event.preventDefault();
-		
-		console.log('submitted');
-		window.location.href = '/background';
+		fetch('/apply', {
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json'
+			},
+			body: JSON.stringify(this.state),
+		})
+		.then(res => res.json())
+		.then(res => {
+			if(res && res.status === 'success'){
+				window.location.href = `/background?email=${this.state.email}`;
+			}
+		})
 	}
 
   handleChange = event => {
@@ -30,16 +57,35 @@ class Apply extends React.Component {
   render() {
     return (
       <div className="Home">
-        <div className="Home-header">
-          <a href='//instacart.com'><img src={logo} className="Home-logo" alt="logo" /></a>
-        </div>
+        <Header />
         <div className='Home-main'>
-					<form onSubmit={this.handleSubmit}>
-						<div><label htmlFor="first_name">First Name:</label> <input type='text' required value={this.state.value} onChange={this.handleChange} /></div>
-						<div><label htmlFor="last_name">Last Name:</label> <input type='text' required value={this.state.value} onChange={this.handleChange} /></div>
-						<div><label htmlFor="email">Email:</label> <input type='email' required value={this.state.value} onChange={this.handleChange} /></div>
-						<div><label htmlFor="phone">Phone:</label> <input type='text' required value={this.state.value} onChange={this.handleChange} /></div>
-						<input type='submit' onClick={this.handleSubmit}/>
+					<form onSubmit={this.handleSubmit} ref={this.form}>
+					<h2 className='Home-title'>Shopper Information</h2>
+          <p className='Home-text'>Tell us a little about yourself</p>
+					<ul className='Apply-form-list'>
+						<li className='Apply-form-item'>
+							<label htmlFor="first_name">First Name:</label> 
+							<input name='first_name' className='Apply-form-input' type='text' required value={this.state.value} onChange={this.handleChange} onKeyDown={this.handleKeyDown} autoFocus={true}/>
+						</li>
+						<li className='Apply-form-item'>
+							<label htmlFor="last_name">Last Name:</label> 
+							<input name='last_name' className='Apply-form-input' type='text' required value={this.state.value} onChange={this.handleChange} onKeyDown={this.handleKeyDown} />
+						</li>
+						<li className='Apply-form-item'>
+							<label htmlFor="email">Email:</label> 
+							<input name='email' className='Apply-form-input' type='email' required value={this.state.value} onChange={this.handleChange} onKeyDown={this.handleKeyDown} />
+						</li>
+						<li className='Apply-form-item'>
+							<label htmlFor="phone">Phone:</label> 
+							<input name='phone' className='Apply-form-input' type='text' required value={this.state.value} onChange={this.handleChange} onKeyDown={this.handleKeyDown} />
+						</li>
+					</ul>
+					<div>
+						<div className='Home-buttons'>
+							<a className='Home-button' onClick={this.handleCancel}>Cancel</a>
+							<button type='submit' className='Home-button Home-ok'>Continue</button>
+						</div>
+					</div>
 					</form>
         </div>
       </div>
