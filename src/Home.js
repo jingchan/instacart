@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './react.svg';
+import logo from '../assets/instacart-logo-color.png';
 import './Home.css';
 
 class Home extends React.Component {
@@ -7,10 +7,17 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <div className="Home-header">
-          <img src={logo} className="Home-logo" alt="logo" />
-          <h2>Welcome to Razzle</h2>
+          <a href='//instacart.com'><img src={logo} className="Home-logo" alt="logo" /></a>
         </div>
-        <p className="Home-intro">
+
+        <div className='Home-main'>
+          <h2>Shopper Application</h2>
+          <p className='Home-Intro'>Get paid to shop!</p>
+
+          <a className='Home-CTA' href='/apply'>Apply Now!</a>
+        </div>
+
+        {/* <p className="Home-intro">
           To get started, edit <code>src/App.js</code> or{' '}
           <code>src/Home.js</code> and save to reload.
         </p>
@@ -24,7 +31,7 @@ class Home extends React.Component {
           <li>
             <a href="https://palmer.chat">Community Slack</a>
           </li>
-        </ul>
+        </ul> */}
       </div>
     );
   }
