@@ -4,8 +4,8 @@
 
 ### Running the webserver
 ```
-npm i
-npm start
+npm i   # Ensure dependencies are installed
+npm start   
 ``` 
 Then the page should be visible at http://localhost:3000/
 
@@ -21,3 +21,10 @@ Then the page should be visible at http://localhost:3000/
 4. Using color #43b02a for CTA to match the color palette of logo
 
 5. Added rest of application form as well as console output.  Some tradeoffs were made for styling to ensure that pressing 'enter' on the information form would result in a 'submit' rather than a 'back'.
+
+# Part 2: Applicant Analysis
+
+```
+npm i  # Ensure dependencies are installed
+node stats.js 2014-07-14 2014-07-20
+```
