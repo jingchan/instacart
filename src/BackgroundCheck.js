@@ -34,7 +34,6 @@ class BackgroundCheck extends React.Component {
     return (
       <div className="Home">
         <Header />
-
         <div className='Home-main'>
           <h2 className='Home-title'>Background Check</h2>
           <div className='Home-text'>Do you agree to a background check?</div>

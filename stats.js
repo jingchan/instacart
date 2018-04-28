@@ -18,7 +18,11 @@ knex.raw(`SELECT COUNT(*) as count, DATE(created_at, 'weekday 0', '-6 day') as w
 .then((res) => {
   if(res.length > 0){
     let cols = Object.keys(res[0]);
+
+    // Print the column names
     console.log(cols.join(' | '));
+
+    // Print the row data
     res.forEach(row => {
       console.log(cols.map(c => row[c]).join(' | '));
     });

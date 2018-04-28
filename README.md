@@ -22,6 +22,8 @@ Then the page should be visible at http://localhost:3000/
 
 5. Added rest of application form as well as console output.  Some tradeoffs were made for styling to ensure that pressing 'enter' on the information form would result in a 'submit' rather than a 'back'.
 
+6. In the interest of time, we pass 'session' data through get parameters rather than a more conventional production approach such as creation of a session.
+
 # Part 2: Applicant Analysis
 
 ```

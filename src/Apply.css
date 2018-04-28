@@ -9,14 +9,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* border: solid 1px black; */
   margin-top: 10px;
   line-height: 32px;
 }
 
 .Apply-form-input {
   width: 200px;
-  /* height: 2em; */
   font-size: 16px;
   padding: 8px 4px;
   border-radius: 4px;
